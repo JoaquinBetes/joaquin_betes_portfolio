@@ -1,3 +1,9 @@
+# Ignorar configuraciones de VSCode
+.vscode/
+
+# Ignorar la carpeta de compilación de Angular
+.angular/
+
 # Logs
 logs
 *.log
