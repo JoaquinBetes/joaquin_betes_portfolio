@@ -1,0 +1,65 @@
+@use 'sass:color';
+
+/* Variables de colores para modo nocturno */
+$background-color: #1d1d1d;
+$text-color: #d3d3d3;
+$primary-color: #bb86fc;
+$secondary-color: #03dac6;
+$border-radius: 8px;
+
+/* Sección de bienvenida */
+header {
+  color: $text-color;
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: color.adjust($primary-color, $lightness: 10%);
+      border-color: color.adjust($primary-color, $lightness: 10%);
+    }
+  }
+}
+
+/* Sección sobre mí */
+#about {
+  border-radius: $border-radius;
+  background-color: color.adjust($background-color, $lightness: -15%);
+  color: $text-color;
+}
+
+/* Sección de proyectos */
+#projects {
+  .card {
+    background-color: color.adjust($background-color, $lightness: -10%);
+    color: $text-color;
+    
+
+    .btn-primary {
+      background-color: $primary-color;
+      border-color: $primary-color;
+
+      &:hover {
+        background-color: color.adjust($primary-color, $lightness: 10%);
+        border-color: color.adjust($primary-color, $lightness: 10%);
+      }
+    }
+  }
+}
+
+/* Sección de contacto */
+#contact {
+  border-radius: $border-radius;
+  background-color: color.adjust($background-color, $lightness: -15%);
+  color: $text-color;
+
+  .btn-light {
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: color.adjust($secondary-color, $lightness: 10%);
+    }
+  }
+}

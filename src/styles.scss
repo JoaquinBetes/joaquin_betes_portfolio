@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@use "bootstrap";
+
+$background-color: #1d1d1d;
+$text-color: #d3d3d3;
+
+body 
+{
+  background-color: $background-color;
+  color: $text-color
+}
