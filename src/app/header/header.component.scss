@@ -2,19 +2,20 @@
 $primary-color: #0d6efd; // Cambia esto para personalizar
 $header-bg: #212529;
 $link-hover-color: $primary-color;
+$text-color: #d3d3d3;
 
 // Estilos del header
 .navbar {
   background-color: $header-bg;
 
   .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: $text-color;
   }
 
   .nav-link {
-    color: #ddd;
+    color: $text-color;
     transition: color 0.3s;
 
     &:hover {
