@@ -1,11 +1,278 @@
 /* You can add global styles to this file, and also import other style files */
 @use "bootstrap";
+@use 'sass:color';
 
-$background-color: #1d1d1d;
-$text-color: #d3d3d3;
+/* Variables de colores para modo nocturno */
+// Navbar
+$nav-primary-color-dm: #0d6efd; 
+$header-bg-dm: #212529;
+$link-hover-color-dm: $nav-primary-color-dm;
+// Home
+$background-color-dm: #1d1d1d;
+$background-section-color-dm:#212529;
+$text-color-dm: #d3d3d3;
+$primary-color-dm: #bb86fc;
+$secondary-color-dm: #ab6bfa;
+$terciary-color-dm: #0d6efd;
 
-body 
+/* Variables de colores para modo claro */
+// Navbar
+$nav-primary-color-lm: #0d6efd; 
+$header-bg-lm: #0d6efd;
+$link-hover-color-lm: #212529;
+$nav-text-color-lm: #f2f2f2;
+// Home
+$background-color-lm: #f2f2f2;
+$background-section-color-lm: #ebebeb;
+$text-color-lm: #212529;
+$primary-color-lm: #007bff;
+$secondary-color-lm: #6c757d;
+
+$border-radius: 8px;
+
+.bi{
+  position: absolute;
+  margin-right: 15px;
+  margin-top: 0px;
+  right: 0;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+.bi:hover{
+  color: $nav-text-color-lm;
+}
+
+.bi-brightness-high-fill{
+  font-size: 1.3rem;
+  top: 0.55rem;
+}
+
+.bi-moon-stars-fill{
+  color: $nav-text-color-lm;
+  top: 0.75rem;
+}
+
+.icon-transition {
+  opacity: 0;
+  transform: scale(0.8) rotate(180deg);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.nav-link{
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+// MODO OSCURO
+
+body [data-bs-theme="dark"]
 {
-  background-color: $background-color;
-  color: $text-color
+  transition: background-color 0.7s ease, color 0.7s ease;
+  background-color: $background-color-dm;
+  color: $text-color-dm;
+
+  .navbar {
+    background-color: $header-bg-dm;
+
+    .btn {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  
+    .navbar-brand {
+      color: $text-color-dm;
+    }
+  
+    .nav-link {
+      color: $text-color-dm;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: $link-hover-color-dm;
+      }
+    }
+  
+    .btn-outline-light {
+      color: #fff;
+      border-color: $nav-primary-color-dm;
+  
+      &:hover {
+        background-color: $nav-primary-color-dm;
+        color: #fff;
+      }
+    }
+  }
+
+  header {
+    color: $text-color-dm;
+  
+    .btn-primary {
+      transition: background-color 0.7s ease, color 0.7s ease;
+      background-color: $primary-color-dm;
+      border-color: $primary-color-dm;
+  
+      &:hover {
+        background-color: color.adjust($primary-color-dm, $lightness: -10%);
+        border-color: color.adjust($primary-color-dm, $lightness: -10%);
+      }
+    }
+  }
+  
+  /* Sección sobre mí */
+  #about {
+    border-radius: $border-radius;
+    background-color: $background-section-color-dm;
+    color: $text-color-dm;
+  }
+  
+  /* Sección de proyectos */
+  #projects {
+    .card {
+      background-color: color.adjust($background-color-dm, $lightness: -10%);
+      color: $text-color-dm;
+      
+  
+      .btn-primary {
+        background-color: $primary-color-dm;
+        border-color: $secondary-color-dm;
+  
+        &:hover {
+          background-color: $secondary-color-dm;
+          
+        }
+      }
+    }
+  }
+  
+  /* Sección de contacto */
+  #contact {
+    border-radius: $border-radius;
+    background-color: $background-section-color-dm;
+    color: $text-color-dm;
+  
+    .btn-outline-light {
+      color: $text-color-dm;
+      border-color: $terciary-color-dm;
+  
+      &:hover {
+        background-color: color.adjust($terciary-color-dm, $lightness: 5%);
+        color: #fff;
+      }
+    }
+  }
+}
+
+// MODO CLARO
+
+body [data-bs-theme="light"]
+{
+  transition: background-color 0.7s ease, color 0.7s ease;
+  background-color: $background-color-lm;
+  color: #1d1d1d;
+
+  .navbar {
+    background-color: $header-bg-lm;
+
+    .btn {
+      outline: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  
+    .navbar-brand {
+      color: $nav-text-color-lm;
+    }
+  
+    .nav-link {
+      color: $nav-text-color-lm;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: $link-hover-color-lm;
+      }
+    }
+  
+    .btn-outline-light {
+      color: #fff;
+      border-color: $nav-primary-color-lm;
+  
+      &:hover {
+        background-color: $nav-primary-color-lm;
+        color: #fff;
+      }
+    }
+  }
+
+  header {
+    background-color: $background-color-lm;
+    color: $text-color-lm;
+  
+    .btn-primary {
+      transition: background-color 0.7s ease, color 0.7s ease;
+      background-color: $primary-color-lm;
+      border-color: $primary-color-lm;
+  
+      &:hover {
+        background-color: color.adjust($primary-color-lm, $lightness: -10%);
+        border-color: color.adjust($primary-color-lm, $lightness: -10%);
+      }
+    }
+  }
+  
+  /* Sección sobre mí */
+  #about {
+    border-radius: $border-radius;
+    background-color: $background-section-color-lm;
+    color: $text-color-lm;
+  }
+  
+  /* Sección de proyectos */
+  #projects {
+    color: $text-color-lm;
+    background-color: $background-color-lm;
+    .card {
+      background-color: color.adjust($background-color-lm, $lightness: -5%);
+      color: $text-color-lm;
+  
+      .btn-primary {
+        background-color: $primary-color-lm;
+        border-color: $secondary-color-lm;
+  
+        &:hover {
+          background-color: color.adjust($primary-color-lm, $lightness: -10%);
+          border-color: color.adjust($primary-color-lm, $lightness: -10%);
+        }
+      }
+    }
+  }
+  
+  /* Sección de contacto */
+  #contact {
+    border-radius: $border-radius;
+    background-color: $background-section-color-lm;
+    color: $text-color-lm;
+  
+    .btn-outline-light {
+      color: $text-color-lm;
+      border-color: $primary-color-lm;
+      border-width: 0.1055cap;
+  
+      &:hover {
+        background-color: color.adjust($primary-color-lm, $lightness: -5%);
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .bi{
+    position: absolute;
+    margin-right: 20%;
+  }
 }

@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   technologies: string[] = ['Angular', 'JavaScript', 'TypeScript', 'React', 'Python', '.NET', 'PHP'];
+
 
   // Define los proyectos con las tecnologías
   projects: { title: string; description: string; image: string; technologies: string[] }[] = [
