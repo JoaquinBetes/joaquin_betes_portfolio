@@ -1,0 +1,51 @@
+<section id="projects" class="py-5" data-bs-theme="dark">
+    <div class="container">
+      <h2 class="text-center mb-4">Mis Proyectos</h2>
+  
+      <!-- Barra de opciones -->
+      <div class="mb-4 text-center">
+        @for ( tech of technologies; track tech ){
+          <button
+          class="btn btn-outline-primary me-2"
+          [class.active]="selectedTechnologies.includes(tech)"
+          (click)="toggleTechnologySelection(tech)">
+          {{ tech }}
+          </button>
+        }
+
+        <button
+        class="btn btn-outline-danger me-2"
+        [class.active]="selectedTechnologies.includes('trabajo')"
+        (click)="clearSelections()">
+        Trabajos
+      </button>
+
+        <button
+          class="btn btn-outline-secondary"
+          [class.active]="selectedTechnologies.length === 0"
+          (click)="clearSelections()">
+          Todos
+        </button>
+      </div>
+  
+      <div class="row">
+        <!-- Proyectos visibles -->
+        @for ( project of visibleProjects ; track project.title) {
+          <div class="col-md-4 mb-4">
+            <app-cards-proyects [project]="project" ></app-cards-proyects>
+          </div>
+        }
+      </div>
+  
+      <!-- Botón para mostrar más -->
+      <div class="text-center mt-4">
+        @if (!showAll) {
+          <button class="btn btn-primary" (click)="toggleShowAll()">Mostrar más</button>
+        }
+        @if (showAll) {
+          <button class="btn btn-secondary" (click)="toggleShowAll()">Mostrar menos</button>
+        }
+      </div>
+
+    </div>
+  </section>

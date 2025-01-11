@@ -97,15 +97,6 @@ body [data-bs-theme="dark"]
       }
     }
   
-    .btn-outline-light {
-      color: #fff;
-      border-color: $nav-primary-color-dm;
-  
-      &:hover {
-        background-color: $nav-primary-color-dm;
-        color: #fff;
-      }
-    }
   }
 
   header {
@@ -197,15 +188,6 @@ body [data-bs-theme="light"]
       }
     }
   
-    .btn-outline-light {
-      color: #fff;
-      border-color: $nav-primary-color-lm;
-  
-      &:hover {
-        background-color: $nav-primary-color-lm;
-        color: #fff;
-      }
-    }
   }
 
   header {
