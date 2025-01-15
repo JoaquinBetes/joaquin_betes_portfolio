@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Technology } from '../interfaces/technology.interface.js';
 
 @Component({
   selector: 'app-cards-proyects',
@@ -10,8 +11,9 @@ import { Component, Input } from '@angular/core';
 export class CardsProyectsComponent {
  @Input() project!: {
     title: string;
+    role:string;
     description: string;
     image: string;
-    technologies: string[];
+    technologies: Technology[];
  }
 }

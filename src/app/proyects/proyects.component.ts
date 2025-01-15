@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../services/project.service.js';
 import { CardsProyectsComponent } from '../cards-proyects/cards-proyects.component.js';
+import { Technology } from '../interfaces/technology.interface.js';
 
 @Component({
   selector: 'app-proyects',
@@ -10,10 +11,10 @@ import { CardsProyectsComponent } from '../cards-proyects/cards-proyects.compone
   styleUrl: './proyects.component.scss'
 })
 export class ProyectsComponent {
-  technologies: string[] = ['Angular', 'JavaScript', 'TypeScript', 'React', 'Python', '.NET', 'PHP'];
-  visibleProjects: { title: string; description: string; image: string; technologies: string[] }[] = [];
+  technologies: string[] = ['Angular', 'JavaScript', 'TypeScript', 'React', 'Python', 'NET', 'PHP'];
+  visibleProjects: { title: string; role:string, description: string; image: string; technologies: Technology[] }[] = [];
   showAll = false; 
-  selectedTechnologies: string[] = [];
+  selectedTechnologies: Technology[] = [];
 
   constructor(private projectService: ProjectService){}
 
@@ -31,8 +32,11 @@ export class ProyectsComponent {
     this.updateVisibleProjects();
   }
 
-  toggleTechnologySelection(tech: string) {
-    const index = this.selectedTechnologies.indexOf(tech);
+  toggleTechnologySelection(techName: string) {
+    const tech = this.projectService.selectTech(techName);
+    if (!tech) return;
+
+    const index = this.selectedTechnologies.findIndex(t => t.name === tech.name);
     if (index === -1) {
       this.selectedTechnologies.push(tech); // Si no está seleccionada, la agregamos
     } else {
@@ -40,6 +44,11 @@ export class ProyectsComponent {
     }
     this.updateVisibleProjects(); // Volver a actualizar los proyectos
   }
+
+  isTechnologySelected(tech: string): boolean {
+    return this.selectedTechnologies.some(t => t.name === tech);
+  }
+  
 
   clearSelections() {
     this.selectedTechnologies = [];

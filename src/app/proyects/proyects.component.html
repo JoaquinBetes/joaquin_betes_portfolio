@@ -7,7 +7,7 @@
         @for ( tech of technologies; track tech ){
           <button
           class="btn btn-outline-primary me-2"
-          [class.active]="selectedTechnologies.includes(tech)"
+          [class.active]="isTechnologySelected(tech)"
           (click)="toggleTechnologySelection(tech)">
           {{ tech }}
           </button>
@@ -15,7 +15,7 @@
 
         <button
         class="btn btn-outline-danger me-2"
-        [class.active]="selectedTechnologies.includes('trabajo')"
+        [class.active]="isTechnologySelected('Trabajo')"
         (click)="clearSelections()">
         Trabajos
       </button>
