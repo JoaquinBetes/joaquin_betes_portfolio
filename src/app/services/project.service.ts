@@ -27,6 +27,7 @@ export class ProjectService {
     { name: 'MongoDB', icon:"../../assets/icons/mongodb.svg" },
     { name: 'GitHub', icon:"../../assets/icons/github.svg" },
     { name: 'Git', icon:"../../assets/icons/git.svg" },
+    { name: 'GoogleMapsAPI', icon:"../../assets/icons/googlemaps.png" },
     
   ];
 
@@ -42,8 +43,10 @@ export class ProjectService {
     { title: 'Sistema de gestión de estudio de tatuadores', role:"Fullstack", description: 'Descripción breve del proyecto', image: '../../assets/images/tattoo.png', technologies: [this.selectTech('Angular'), this.selectTech('TypeScript'), this.selectTech('MikroORM'), this.selectTech('MySQL'), this.selectTech('Node'), this.selectTech('ExpressJs') ] },
     { title: 'Sistema de gestión académica', role:"Fullstack", description: 'Otro proyecto interesante', image: '../../assets/images/academia.png', technologies: [this.selectTech('Csharp'), this.selectTech('NET'), this.selectTech('SQLServer')] },
     { title: 'Entrenamiento agentes IA para Breakout', role:"Investigador y desarrollador", description: 'Un proyecto completo', image: '../../assets/images/paper.png', technologies: [this.selectTech('Python'), this.selectTech('Pandas')] },
-    { title: 'Proyecto 4', role:"Frontend", description: 'Otro proyecto en Angular', image: 'https://via.placeholder.com/350x200', technologies: [this.selectTech('Angular'), this.selectTech('TypeScript')] },
-    { title: 'Proyecto 5', role:"Frontend", description: 'Un proyecto más', image: 'https://via.placeholder.com/350x200', technologies: [this.selectTech('PHP'), this.selectTech('JavaScript')] },
+    { title: 'Sistema de Venta de entradas', role:"Fullstack", description: 'Otro proyecto en Angular', image: '../../assets/images/ventaentradas.png', technologies: [this.selectTech('Java'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('Bootstrap')] },
+    { title: 'Administración inmobiliaria', role:"Frontend", description: 'Un proyecto más', image: '../../assets/images/inmobiliaria.png', technologies: [this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS')] },
+    { title: 'Web para Profesional del Tatuaje', role:"Frontend", description: 'Un proyecto más', image: '../../assets/images/tattood.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS'), this.selectTech('GoogleMapsAPI')] }
+    // ,
   ];
 
   getProjects(){
