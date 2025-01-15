@@ -250,11 +250,10 @@ body [data-bs-theme="light"]
       }
     }
   }
-}
-
-@media (max-width: 992px) {
-  .bi{
-    position: absolute;
-    margin-right: 20%;
+  .skill-card {
+    background-color: $background-section-color-lm;
+    color: $text-color-lm;
+    border-color: #b7b7b7;
   }
 }
+

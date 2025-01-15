@@ -6,7 +6,7 @@
       <div class="mb-4 text-center">
         @for ( tech of technologies; track tech ){
           <button
-          class="btn btn-outline-primary me-2"
+          class="btn btn-outline-primary me-2 mb-2"
           [class.active]="isTechnologySelected(tech)"
           (click)="toggleTechnologySelection(tech)">
           {{ tech }}

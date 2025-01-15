@@ -11,7 +11,7 @@ import { Technology } from '../interfaces/technology.interface.js';
   styleUrl: './proyects.component.scss'
 })
 export class ProyectsComponent {
-  technologies: string[] = ['Angular', 'JavaScript', 'TypeScript', 'React', 'Python', 'NET', 'PHP'];
+  technologies: string[] = ['JavaScript', 'TypeScript','Angular', 'React', 'Node',  'Python', 'Pandas', 'NET','Java', 'PHP','MySQL', 'SQLServer', 'MongoDB', 'MikroORM', 'Bootstrap' ];
   visibleProjects: { title: string; role:string, description: string; image: string; technologies: Technology[] }[] = [];
   showAll = false; 
   selectedTechnologies: Technology[] = [];

@@ -12,7 +12,7 @@
         <div class="row">
           <!-- Primera fila -->
           @for(skill of knownTechs ; track skill.title){
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <h4 class="mb-3">{{skill.title}}</h4>
               <div class="d-flex justify-content-center flex-wrap">
                 @for(tech of skill.technologies; track tech.name){
@@ -22,6 +22,97 @@
             </div>
           }
         </div>
+
+      <div id="soft-skills" class="text-center py-5">
+        <h2 class="mb-4">Habilidades Blandas</h2>
+        <div class="row justify-content-center">
+          <!-- Tarjeta 1 -->
+          <div class="col-md-4 mb-4 ">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Trabajo en Equipo</h5>
+                <i class="bi bi-people text-primary mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Colaboro eficazmente con diferentes perfiles y promuevo un ambiente positivo y productivo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Comunicación Efectiva</h5>
+                <i class="bi bi-chat-dots text-success mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Expreso ideas claramente, escucho activamente y adapto mi mensaje a diferentes audiencias.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Manejo del Inglés</h5>
+                <i class="bi bi-translate text-danger mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Dominio del idioma inglés, facilitando la comunicación y el acceso a fuentes globales de conocimiento.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 4 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Resolución de Problemas</h5>
+                <i class="bi bi-puzzle text-warning mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Enfoque estructurado y analítico para superar desafíos, priorizando soluciones eficientes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 5 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Adaptabilidad</h5>
+                <i class="bi bi-gear text-info mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Capacidad de ajustarme rápidamente a nuevos entornos, tecnologías y dinámicas de trabajo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Tarjeta 6 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100  skill-card">
+              <div class="w-100">
+                <h5 class="card-title text-center mt-3 mb-0">Pensamiento Crítico</h5>
+                <i class="bi bi-lightbulb text-secondary mt-0"></i>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">
+                  Formación científica que impulsa la toma de decisiones basada en análisis y razonamiento lógico.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       </div>
     </div>
   </section>
