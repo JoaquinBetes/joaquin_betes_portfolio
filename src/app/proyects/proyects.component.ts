@@ -14,6 +14,7 @@ export class ProyectsComponent {
   technologies: string[] = ['JavaScript', 'TypeScript','Angular', 'React', 'Node',  'Python', 'Pandas', 'NET','Java', 'PHP','MySQL', 'SQLServer', 'MongoDB', 'MikroORM', 'Bootstrap' ];
   visibleProjects: { title: string; role:string, description: string; image: string; technologies: Technology[] }[] = [];
   showAll = false; 
+  includeWork: boolean = false;
   selectedTechnologies: Technology[] = [];
 
   constructor(private projectService: ProjectService){}
@@ -23,12 +24,17 @@ export class ProyectsComponent {
   }
 
   updateVisibleProjects() {
-    const filteredProjects = this.projectService.filterProjects(this.selectedTechnologies)
+    const filteredProjects = this.projectService.filterProjects(this.selectedTechnologies, this.includeWork);
     this.visibleProjects = this.showAll ? filteredProjects : filteredProjects.slice(0,3);
   }
 
   toggleShowAll() {
     this.showAll = !this.showAll;
+    this.updateVisibleProjects();
+  }
+
+  toggleWorkFilter() {
+    this.includeWork = !this.includeWork;
     this.updateVisibleProjects();
   }
 
@@ -52,6 +58,7 @@ export class ProyectsComponent {
 
   clearSelections() {
     this.selectedTechnologies = [];
+    this.includeWork = false;
     this.updateVisibleProjects();
   }
 }

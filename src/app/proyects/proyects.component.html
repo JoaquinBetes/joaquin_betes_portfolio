@@ -15,8 +15,8 @@
 
         <button
         class="btn btn-outline-danger me-2 mb-2"
-        [class.active]="isTechnologySelected('Trabajo')"
-        (click)="clearSelections()">
+        [class.active]="includeWork"
+        (click)="toggleWorkFilter()">
         Trabajos
       </button>
 

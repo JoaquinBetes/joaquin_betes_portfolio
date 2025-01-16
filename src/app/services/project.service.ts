@@ -44,7 +44,7 @@ export class ProjectService {
     { title: 'Sistema de gestión académica', role:"Fullstack", description: 'Otro proyecto interesante', image: '../../assets/images/academia.png', technologies: [this.selectTech('Csharp'), this.selectTech('NET'), this.selectTech('SQLServer')] },
     { title: 'Entrenamiento agentes IA para Breakout', role:"Investigador y desarrollador", description: 'Un proyecto completo', image: '../../assets/images/paper.png', technologies: [this.selectTech('Python'), this.selectTech('Pandas')] },
     { title: 'Sistema de Venta de entradas', role:"Fullstack", description: 'Otro proyecto en Angular', image: '../../assets/images/ventaentradas.png', technologies: [this.selectTech('Java'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('Bootstrap')] },
-    { title: 'Administración inmobiliaria', role:"Frontend", description: 'Un proyecto más', image: '../../assets/images/inmobiliaria.png', technologies: [this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS')] },
+    { title: 'Administración inmobiliaria', role:"Frontend", description: 'Un proyecto más', image: '../../assets/images/inmobiliaria.png', technologies: [this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
     { title: 'Web para Profesional del Tatuaje', role:"Frontend", description: 'Un proyecto más', image: '../../assets/images/tattood.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS'), this.selectTech('GoogleMapsAPI')] }
     // ,
   ];
@@ -57,12 +57,21 @@ export class ProjectService {
     return [...this.technologies]
   }
 
-  filterProjects(selectedTechnologies: Technology[]){
-    return selectedTechnologies.length > 0 ?
-      this.projects.filter(
-        project => selectedTechnologies.every(tech => project.technologies.includes(tech))
-      )
-      : [...this.projects]
+  filterProjects(selectedTechnologies: Technology[], includeWork: boolean = false) {
+    return this.projects.filter(project => {
+      // Verifica que las tecnologías seleccionadas coincidan
+      const matchesTechnologies = selectedTechnologies.length > 0
+        ? selectedTechnologies.every(tech => project.technologies.includes(tech))
+        : true;
+  
+      // Verifica si el atributo "work" no es nulo ni undefined (solo si includeWork es true)
+      const matchesWork = includeWork
+        ? project.work !== undefined && project.work !== null
+        : true;
+  
+      return matchesTechnologies && matchesWork;
+    });
   }
+  
 
 }
