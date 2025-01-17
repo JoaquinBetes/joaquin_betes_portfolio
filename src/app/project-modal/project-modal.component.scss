@@ -1,0 +1,20 @@
+.modal-dialog {
+    max-width: 800px;
+    
+  }
+.modal-content {
+    background-color: #212529;
+}
+  
+.modal-title{
+    display: inline-block;
+    width: 95%;
+}
+.header{
+    width: 100%;
+}
+.btn-close{
+    position: absolute;
+    right: 0.5%;
+    top:0.5%
+}

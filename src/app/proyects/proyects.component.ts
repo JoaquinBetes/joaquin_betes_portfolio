@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import { ProjectService } from '../services/project.service.js';
 import { CardsProyectsComponent } from '../cards-proyects/cards-proyects.component.js';
+import { ProjectModalComponent } from '../project-modal/project-modal.component.js';
 import { Technology } from '../interfaces/technology.interface.js';
 
 @Component({
   selector: 'app-proyects',
   standalone: true,
-  imports: [CardsProyectsComponent],
+  imports: [CardsProyectsComponent, ProjectModalComponent],
   templateUrl: './proyects.component.html',
   styleUrl: './proyects.component.scss'
 })
 export class ProyectsComponent {
-  technologies: string[] = ['JavaScript', 'TypeScript','Angular', 'React', 'Node',  'Python', 'Pandas', 'NET','Java', 'PHP','MySQL', 'SQLServer', 'MongoDB', 'MikroORM', 'Bootstrap' ];
+  technologies: string[] = ['JavaScript', 'TypeScript','Angular', 'Node',  'Python', 'Pandas', 'NET','Java', 'PHP','MySQL', 'SQLServer', 'MongoDB', 'MikroORM', 'Bootstrap' ];
   visibleProjects: { title: string; role:string, description: string; image: string; technologies: Technology[] }[] = [];
   showAll = false; 
   includeWork: boolean = false;
+  selectedProject: { title: string; role: string; description: string; image: string; technologies: Technology[] } | null = null;
   selectedTechnologies: Technology[] = [];
 
   constructor(private projectService: ProjectService){}
@@ -55,10 +57,17 @@ export class ProyectsComponent {
     return this.selectedTechnologies.some(t => t.name === tech);
   }
   
-
   clearSelections() {
     this.selectedTechnologies = [];
     this.includeWork = false;
     this.updateVisibleProjects();
+  }
+
+  openModal(project: { title: string; role: string; description: string; image: string; technologies: Technology[] }) {
+    this.selectedProject = project;
+  }
+
+  closeModal() {
+    this.selectedProject = null;
   }
 }

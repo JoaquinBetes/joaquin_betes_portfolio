@@ -67,6 +67,18 @@ $border-radius: 8px;
   font-weight: normal;
 }
 
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.image-wrapper img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 // MODO OSCURO
 
 body [data-bs-theme="dark"]
@@ -212,7 +224,11 @@ body [data-bs-theme="light"]
     background-color: $background-section-color-lm;
     color: $text-color-lm;
   }
-  
+
+  .modal-content {
+    background-color: #ebebeb;
+}
+
   /* Sección de proyectos */
   #projects {
     color: $text-color-lm;

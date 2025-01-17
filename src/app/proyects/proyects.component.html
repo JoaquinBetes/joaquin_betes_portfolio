@@ -32,10 +32,17 @@
         <!-- Proyectos visibles -->
         @for ( project of visibleProjects ; track project.title) {
           <div class="col-md-4 mb-4">
-            <app-cards-proyects [project]="project" ></app-cards-proyects>
+            <app-cards-proyects [project]="project" >
+              <button class="btn btn-primary mt-3" (click)="openModal(project)">Ver más</button>
+            </app-cards-proyects>
           </div>
         }
       </div>
+
+      @if(selectedProject){
+        <app-project-modal [project]="selectedProject"
+        (close)="closeModal()"></app-project-modal>
+      }
   
       <!-- Botón para mostrar más -->
       <div class="text-center mt-4">

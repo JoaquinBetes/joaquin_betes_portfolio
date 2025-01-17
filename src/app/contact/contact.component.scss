@@ -1,12 +1,45 @@
 .LinkedIn{
-    max-width: 6%;
+    max-width: 9%;
     height: auto;
-}
-.Gmail{
-    max-width: 7%;
-    height: auto;
+    transform: translate(50%, 0%)
 }
 .Github{
-    max-width: 22%;
+    max-width: 10%;
     height: auto;
+    transform: translate(-50%, 0%)
+}
+.contacts{
+    width: 33%;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .LinkedIn{
+        max-width: 16%;
+        height: auto;
+    }
+    .Github{
+        max-width: 16.5%;
+        height: auto;
+    }
+    .contacts{
+        width: 33%;
+    }
+}
+
+@media (max-width: 768px) {
+    .LinkedIn{
+        max-width: 20%;
+        height: auto;
+    }
+    .Github{
+        max-width: 22%;
+        height: auto;
+    }
+    .contacts{
+        width: 33%;
+    }
+    .text-mail{
+        position: absolute;
+        transform: translate(-50%, -0%); /* Ajusta la posición para centrar perfectamente */
+    }
 }
