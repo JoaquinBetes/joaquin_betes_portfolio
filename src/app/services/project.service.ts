@@ -42,132 +42,132 @@ export class ProjectService {
   private projects = [
     { title: 'Sistema de gestión de estudio de tatuadores', role:"Fullstack",
        description: `
-  <section id="tattoo-studio-app" style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px;">
-  <p>
-    Aplicación web integral diseñada para la gestión y automatización de las operaciones de un estudio de tatuajes. 
-    Proporciona funcionalidades para la administración de turnos, clientes, diseños, tatuadores y políticas del estudio, 
-    además de liquidaciones mensuales de sueldos y generación de gráficos e informes de ingresos al estudio.
-  </p>
-
-  <hr style="margin: 20px 0;">
-
-  <h3 style="color: #666;">Frontend</h3>
-  <ul>
-    <li>Interfaz de usuario intuitiva para clientes, tatuadores y encargado.</li>
-    <li>Secciones dinámicas para la visualización de tatuajes/diseños, filtros por categorías y gestión de turnos.</li>
-    <li>Formularios para registro, reservas y gestión de datos personales.</li>
-    <li>
-      Gráficos interactivos e informes visuales de ingresos por comisiones mensuales y por tatuador 
-      utilizando <strong>API Google Charts</strong>.
-    </li>
-  </ul>
-  <p>
-    <strong>Repositorio:</strong> 
-    <a href="https://github.com/JoaquinBetes/FrontendEstudioTatuaje" target="_blank">
-      https://github.com/JoaquinBetes/FrontendEstudioTatuaje
-    </a>
-  </p>
-
-  <hr style="margin: 20px 0;">
-
-  <h2 style="color: #666;">Backend</h2>
-  <ul>
-    <li>Gestión de usuarios, roles y autenticación (clientes, tatuadores, encargado).</li>
-    <li>Notificaciones por correo electrónico para confirmaciones y recordatorios.</li>
-    <li>Lógica de liquidación automática para los tatuadores.</li>
-    <li>Gestión de reglas de negocio (estados de diseños, cálculo de precios, penalizaciones, etc.).</li>
-  </ul>
-  <p>
-    <strong>Repositorio:</strong> 
-    <a href="https://github.com/JoaquinBetes/estudioTatuajes" target="_blank">
-      https://github.com/JoaquinBetes/estudioTatuajes
-    </a>
-  </p>
-  <hr style="margin: 20px 0;">
-</section>
+  <section id="academic-management-system">
+    <div class="container">
+      <div class="p-1">
+        <p>
+          Aplicación web integral diseñada para la gestión y automatización de las operaciones de un estudio de tatuajes. 
+          Proporciona funcionalidades para la administración de turnos, clientes, diseños, tatuadores y políticas del estudio, 
+          además de liquidaciones mensuales de sueldos y generación de gráficos e informes de ingresos al estudio.
+        </p>
+      </div>
+    <hr>
+    <h3>Frontend</h3>
+    <ul>
+      <li>Interfaz de usuario intuitiva para clientes, tatuadores y encargado.</li>
+      <li>Secciones dinámicas para la visualización de tatuajes/diseños, filtros por categorías y gestión de turnos.</li>
+      <li>Formularios para registro, reservas y gestión de datos personales.</li>
+      <li>
+        Gráficos interactivos e informes visuales de ingresos por comisiones mensuales y por tatuador 
+        utilizando <strong>API Google Charts</strong>.
+      </li>
+    </ul>
+      <div class="link d-flex justify-content-center">
+        <a href="https://github.com/JoaquinBetes/FrontendEstudioTatuaje" target="_blank" class="btn btn-primary">
+          Ver Repositorio
+        </a>
+      </div>
+      <hr>
+      <h2>Backend</h2>
+      <ul>
+        <li>Gestión de usuarios, roles y autenticación (clientes, tatuadores, encargado).</li>
+        <li>Notificaciones por correo electrónico para confirmaciones y recordatorios.</li>
+        <li>Lógica de liquidación automática para los tatuadores.</li>
+        <li>Gestión de reglas de negocio (estados de diseños, cálculo de precios, penalizaciones, etc.).</li>
+      </ul>
+      <div class="link d-flex justify-content-center">
+        <a href="https://github.com/JoaquinBetes/estudioTatuajes" target="_blank" class="btn btn-primary">
+          Ver Repositorio
+        </a>
+      </div>
+      <hr>
+    </div>
+  </section>
 `,
      image: '/joaquin_betes_portfolio/assets/images/tattoo.png', technologies: [this.selectTech('Angular'), this.selectTech('TypeScript'), this.selectTech('MikroORM'), this.selectTech('MySQL'), this.selectTech('Node'), this.selectTech('ExpressJs') ] },
     { title: 'Sistema de gestión académica', role:"Fullstack",
        description: `
   <section id="academic-management-system">
-  <div>
-    <strong>El Sistema de Gestión Académica (SGA)</strong> registra y administra las actividades académicas de la universidad en torno a las entidades principales de Alumnos, Profesores, Materias y Cursos. 
-    Proporciona funcionalidades clave como inscripciones, gestión de usuarios y reportes, garantizando la automatización y organización de las operaciones académicas.
-  </div>
+    <div class="container">
+      <div>
+        <strong>El Sistema de Gestión Académica (SGA)</strong> registra y administra las actividades académicas de la universidad en torno a las entidades principales de Alumnos, Profesores, Materias y Cursos. 
+        Proporciona funcionalidades clave como inscripciones, gestión de usuarios y reportes, garantizando la automatización y organización de las operaciones académicas.
+      </div>
 
-  <hr style="margin: 20px 0;">
+      <hr style="margin: 20px 0;">
 
-  <h3>Funcionalidades principales</h3>
-  <ul>
-    <li>Alta, Baja, Modificaciones y Consulta de Usuarios, Alumnos, Especialidades, Profesores, Planes y Materias, Comisiones y Cursos.</li>
-    <li>Inscripciones de Alumnos a Cursos con control de cupos disponibles.</li>
-    <li>Registro de notas y asignación de docentes a cursos.</li>
-    <li>Generación de reportes para Cursos, Planes, Especialidades y Usuarios.</li>
-  </ul>
+      <h3>Funcionalidades principales</h3>
+      <ul>
+        <li>Alta, Baja, Modificaciones y Consulta de Usuarios, Alumnos, Especialidades, Profesores, Planes y Materias, Comisiones y Cursos.</li>
+        <li>Inscripciones de Alumnos a Cursos con control de cupos disponibles.</li>
+        <li>Registro de notas y asignación de docentes a cursos.</li>
+        <li>Generación de reportes para Cursos, Planes, Especialidades y Usuarios.</li>
+      </ul>
 
-  <hr style="margin: 20px 0;">
+      <hr style="margin: 20px 0;">
 
-  <h3>Metodología</h3>
-  <p>
-    <strong>Arquitectura de capas:</strong> El sistema utiliza una arquitectura en tres capas (capa de presentación, lógica de negocio y datos), 
-    proporcionando beneficios como separación de responsabilidades, escalabilidad, reutilización de código y mantenibilidad.
-  </p>
+      <h3>Metodología</h3>
+      <p>
+        <strong>Arquitectura de capas:</strong> El sistema utiliza una arquitectura en tres capas (capa de presentación, lógica de negocio y datos), 
+        proporcionando beneficios como separación de responsabilidades, escalabilidad, reutilización de código y mantenibilidad.
+      </p>
 
-  <h4>Ventajas</h4>
-  <ul>
-    <li><strong>Separación de responsabilidades:</strong> Permite una estructura clara y fácil de mantener.</li>
-    <li><strong>Escalabilidad:</strong> Cada capa puede adaptarse a las necesidades del sistema.</li>
-    <li><strong>Reutilización de código:</strong> Facilita el uso compartido de lógica y datos entre componentes.</li>
-    <li><strong>Mantenibilidad:</strong> Reduce el riesgo de errores y simplifica las actualizaciones.</li>
-  </ul>
+      <h4>Ventajas</h4>
+      <ul>
+        <li><strong>Separación de responsabilidades:</strong> Permite una estructura clara y fácil de mantener.</li>
+        <li><strong>Escalabilidad:</strong> Cada capa puede adaptarse a las necesidades del sistema.</li>
+        <li><strong>Reutilización de código:</strong> Facilita el uso compartido de lógica y datos entre componentes.</li>
+        <li><strong>Mantenibilidad:</strong> Reduce el riesgo de errores y simplifica las actualizaciones.</li>
+      </ul>
 
-  <hr style="margin: 20px 0;">
+      <hr style="margin: 20px 0;">
 
-  <h3>Tecnologías utilizadas</h3>
-  <ul>
-    <li><strong>.NET 7.0:</strong> Plataforma de desarrollo robusta y versátil.</li>
-    <li><strong>Windows Forms:</strong> Interfaz de usuario rica y funcional para aplicaciones de escritorio.</li>
-    <li><strong>ADO.NET:</strong> Acceso y manipulación de datos desde aplicaciones .NET.</li>
-    <li><strong>Quest PDF:</strong> Generación de reportes en PDF.</li>
-  </ul>
+      <h3>Tecnologías utilizadas</h3>
+      <ul>
+        <li><strong>.NET 7.0:</strong> Plataforma de desarrollo robusta y versátil.</li>
+        <li><strong>Windows Forms:</strong> Interfaz de usuario rica y funcional para aplicaciones de escritorio.</li>
+        <li><strong>ADO.NET:</strong> Acceso y manipulación de datos desde aplicaciones .NET.</li>
+        <li><strong>Quest PDF:</strong> Generación de reportes en PDF.</li>
+      </ul>
 
-  <hr style="margin: 20px 0;">
+      <hr>
 
-  <h3 style="color: #666;">Modelo de datos</h3>
-    <p>El sistema incluye un modelo de datos que organiza y relaciona Alumnos, Profesores, Materias, Cursos, Planes y Especialidades, 
-    asegurando una estructura lógica y funcional para la gestión académica.</p>
-  <div class="image-wrapper">
-    <img src="assets/images/mdacademia.png" class="image-wrapper" alt="Modelo datos">
-  </div>
+      <h3>Modelo de datos</h3>
+        <p>El sistema incluye un modelo de datos que organiza y relaciona Alumnos, Profesores, Materias, Cursos, Planes y Especialidades, 
+        asegurando una estructura lógica y funcional para la gestión académica.</p>
+      <div class="image-wrapper">
+        <img src="assets/images/mdacademia.png" class="image-wrapper" alt="Modelo datos">
+      </div>
 
-  <hr style="margin: 20px 0;">
+      <hr>
 
-  <h3 style="color: #666;">Pantallas principales</h3>
-  <h3 style="color: #555;">Interfaz de escritorio</h3>
-  <ul>
-    <li>Cargar notas a los alumnos.</li>
-    <li>Asignar docentes a cursos.</li>
-    <li>Inscripciones de alumnos a cursos.</li>
-    <li>CRUD (Crear, Leer, Actualizar, Eliminar).</li>
-  </ul>
+      <h3>Pantallas principales</h3>
+      <h3>Interfaz de escritorio</h3>
+      <ul>
+        <li>Cargar notas a los alumnos.</li>
+        <li>Asignar docentes a cursos.</li>
+        <li>Inscripciones de alumnos a cursos.</li>
+        <li>CRUD (Crear, Leer, Actualizar, Eliminar).</li>
+      </ul>
 
-  <h3 style="color: #555;">Interfaz web</h3>
-  <ul>
-    <li>Página principal.</li>
-    <li>Consulta de usuarios.</li>
-    <li>Alta de usuarios.</li>
-    <li>Informes de especialidades y usuarios.</li>
-  </ul>
+      <h3>Interfaz web</h3>
+      <ul>
+        <li>Página principal.</li>
+        <li>Consulta de usuarios.</li>
+        <li>Alta de usuarios.</li>
+        <li>Informes de especialidades y usuarios.</li>
+      </ul>
 
-  <hr style="margin: 20px 0;">
+      <hr>
 
-  <h3 style="color: #666;">Enlaces</h3>
-  <p>
-    El proyecto y el script para generar la base de datos están disponibles en el siguiente enlace: 
-    <a href="https://github.com/JoaquinBetes/Academia" target="_blank">https://github.com/JoaquinBetes/Academia</a>
-  </p>
-  <hr style="margin: 20px 0;">
-</section>
+      <h3>Enlaces</h3>
+      <p>
+        El proyecto y el script para generar la base de datos están disponibles en el siguiente enlace: 
+        <a href="https://github.com/JoaquinBetes/Academia" target="_blank">https://github.com/JoaquinBetes/Academia</a>
+      </p>
+      <hr>
+    </div>
+  </section>
 
 `
        , image: '/joaquin_betes_portfolio/assets/images/academia.png', technologies: [this.selectTech('Csharp'), this.selectTech('NET'), this.selectTech('SQLServer')] },
@@ -175,13 +175,13 @@ export class ProjectService {
       description: `
       <section id="proyecto">
         <div class="container">
-          <h3 class="text-center mb-4">Algoritmos Genéticos y Técnicas de Aprendizaje Automático para el Entrenamiento de Agentes Inteligentes en Videojuegos Arcade</h2>
+          <h4 class="text-center mb-4">Algoritmos Genéticos y Técnicas de Aprendizaje Automático para el Entrenamiento de Agentes Inteligentes en Videojuegos Arcade</h2>
         
           <p>
             Este proyecto consiste en el uso de Algoritmos Genéticos (GA) y Técnicas de Aprendizaje Automático para el entrenamiento de Agentes Inteligentes en videojuegos arcade. Se aplican técnicas de optimización y evolución para crear agentes autónomos capaces de aprender y adaptarse a su entorno.
           </p>
-<hr style="margin: 20px 0;">
-          <div class="technologies">
+          <hr style="margin: 20px 0;">
+          <div>
             <h3>Tecnologías Utilizadas:</h3>
             <ul>
               <li><strong>Python</strong>: Lenguaje de programación principal para el desarrollo del proyecto.</li>
@@ -199,22 +199,24 @@ export class ProjectService {
               <li>Distinguido como el mejor proyecto dentro de la categoría correspondiente a estudiantes.</li>
             </ul>
           </div>
-          <div class=" d-flex justify-content-around link">
-            <a href="https://drive.google.com/file/d/1_jUFnnkpLlqgOzBGHJjQl9cZzdV61M-1/view" target="_blank" class="btn btn-primary">
+          <div class="link d-flex justify-content-center">
+            <a href="https://drive.google.com/file/d/1_jUFnnkpLlqgOzBGHJjQl9cZzdV61M-1/view" target="_blank" class="btn btn-primary m-2">
               Ver Paper
             </a>
-            <a href="https://drive.google.com/file/d/1-87yJt0URDw9362hTF7lcSV9huMyGF2v/view?usp=sharing" target="_blank" class="btn btn-primary">
+            <a href="https://drive.google.com/file/d/1-87yJt0URDw9362hTF7lcSV9huMyGF2v/view?usp=sharing" target="_blank" class="btn btn-primary m-2">
               Ver Informe
             </a>
-            <a href="https://docs.google.com/presentation/d/1fN2qoq6lukmax16vR6Z3gllDTkd34CIa/edit?usp=sharing&ouid=107201921861823553577&rtpof=true&sd=true" target="_blank" class="btn btn-primary">
-              Ver Presentacion(PPT)
+          </div>
+          <div class="link d-flex justify-content-center">
+            <a href="https://docs.google.com/presentation/d/1fN2qoq6lukmax16vR6Z3gllDTkd34CIa/edit?usp=sharing&ouid=107201921861823553577&rtpof=true&sd=true" target="_blank" class="btn btn-primary m-2">
+              Ver PPT
             </a>
-            <a href="https://github.com/JoaquinBetes/ProyectoAlgoritmosGeneticos" target="_blank" class="btn btn-primary">
-              Ver Código Fuente
+            <a href="https://github.com/JoaquinBetes/ProyectoAlgoritmosGeneticos" target="_blank" class="btn btn-primary m-2">
+              Ver Código
             </a>
           </div>
+          <hr style="margin: 20px 0;">
         </div>
-        <hr style="margin: 20px 0;">
       </section>
  `, image: '/joaquin_betes_portfolio/assets/images/paper.png', technologies: [this.selectTech('Python'), this.selectTech('Pandas')] },
     { title: 'Sistema de Venta de entradas', role:"Fullstack", 
