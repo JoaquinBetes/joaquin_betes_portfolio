@@ -6,8 +6,8 @@ import { Technology } from '../interfaces/technology.interface.js';
 })
 export class ProjectService {
   private technologies: Technology[] = [
-    { name: 'Angular', icon:"../../assets/icons/angular.svg"},
-    { name: 'JavaScript', icon:"../../assets/icons/js.svg" },
+    { name: 'Angular', icon:"/joaquin_betes_portfolio/assets/icons/angular.svg"},
+    { name: 'JavaScript', icon:"/joaquin_betes_portfolio/assets/icons/js.svg" },
     { name: 'Java', icon:"../../assets/icons/java.png" },
     { name: 'PHP', icon:"../../assets/icons/php.svg" },
     { name: 'React', icon:"../../assets/icons/react.svg" },
