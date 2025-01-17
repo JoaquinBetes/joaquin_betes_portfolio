@@ -86,7 +86,7 @@ export class ProjectService {
   <hr style="margin: 20px 0;">
 </section>
 `,
-     image: '../../assets/images/tattoo.png', technologies: [this.selectTech('Angular'), this.selectTech('TypeScript'), this.selectTech('MikroORM'), this.selectTech('MySQL'), this.selectTech('Node'), this.selectTech('ExpressJs') ] },
+     image: '/joaquin_betes_portfolio/assets/images/tattoo.png', technologies: [this.selectTech('Angular'), this.selectTech('TypeScript'), this.selectTech('MikroORM'), this.selectTech('MySQL'), this.selectTech('Node'), this.selectTech('ExpressJs') ] },
     { title: 'Sistema de gestión académica', role:"Fullstack",
        description: `
   <section id="academic-management-system">
@@ -170,7 +170,7 @@ export class ProjectService {
 </section>
 
 `
-       , image: '../../assets/images/academia.png', technologies: [this.selectTech('Csharp'), this.selectTech('NET'), this.selectTech('SQLServer')] },
+       , image: '/joaquin_betes_portfolio/assets/images/academia.png', technologies: [this.selectTech('Csharp'), this.selectTech('NET'), this.selectTech('SQLServer')] },
     { title: 'Entrenamiento agentes IA para Breakout', role:"Investigador y desarrollador", 
       description: `
       <section id="proyecto">
@@ -216,7 +216,7 @@ export class ProjectService {
         </div>
         <hr style="margin: 20px 0;">
       </section>
- `, image: '../../assets/images/paper.png', technologies: [this.selectTech('Python'), this.selectTech('Pandas')] },
+ `, image: '/joaquin_betes_portfolio/assets/images/paper.png', technologies: [this.selectTech('Python'), this.selectTech('Pandas')] },
     { title: 'Sistema de Venta de entradas', role:"Fullstack", 
       description:
       `
@@ -258,7 +258,7 @@ export class ProjectService {
         </div>
         <hr style="margin: 20px 0;">
       </section>
-      `, image: '../../assets/images/ventaentradas.png', technologies: [this.selectTech('Java'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('Bootstrap')] },
+      `, image: '/joaquin_betes_portfolio/assets/images/ventaentradas.png', technologies: [this.selectTech('Java'), this.selectTech('MySQL'), this.selectTech('JavaScript'), this.selectTech('Bootstrap')] },
     { title: 'Administración inmobiliaria', role:"Frontend", description: 
       `
       <section id="gestion-inmobiliaria">
@@ -292,7 +292,7 @@ export class ProjectService {
       <hr style="margin: 20px 0;">
     </section>
       `
-      , image: '../../assets/images/inmobiliaria.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
+      , image: '/joaquin_betes_portfolio/assets/images/inmobiliaria.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
     { title: 'Sistema de gestión de Tokens', role:"Fullstack", description:
        `
        <section id="sistema-tokens-virtuales">
@@ -337,7 +337,7 @@ export class ProjectService {
       </section>
 
        `
-       , image: '../../assets/images/tokens.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
+       , image: '/joaquin_betes_portfolio/assets/images/tokens.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
     { title: 'Web para Profesional del Tatuaje', role:"Frontend", description:
        `
        <section id="pagina-web-tatuadora">
@@ -385,7 +385,7 @@ export class ProjectService {
         </div>
         <hr style="margin: 20px 0;">
       </section>
-       `, image: '../../assets/images/tattood.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS'), this.selectTech('GoogleMapsAPI')] },
+       `, image: '/joaquin_betes_portfolio/assets/images/tattood.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('HTML'), this.selectTech('CSS'), this.selectTech('GoogleMapsAPI')] },
     { title: 'Sistema de gestión municipal', role:"Fullstack", description: 
       `
       <section id="sistema-gestion-municipal">
@@ -448,7 +448,7 @@ export class ProjectService {
         <hr style="margin: 20px 0;">
       </section>
       `
-      , image: '../../assets/images/comuni.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" }
+      , image: '/joaquin_betes_portfolio/assets/images/comuni.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" }
     // ,
   ];
 
