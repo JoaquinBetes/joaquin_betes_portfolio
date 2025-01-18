@@ -5,20 +5,16 @@
       <!-- Barra de opciones -->
       <div class="mb-4 text-center">
         @for ( tech of technologies; track tech ){
-          <button
-          class="btn btn-outline-primary me-2 mb-2"
-          [class.active]="isTechnologySelected(tech)"
-          (click)="toggleTechnologySelection(tech)">
-          {{ tech }}
-          </button>
+          <input type="checkbox" class="btn-check" id="btn-{{ tech }}" [checked]="isTechnologySelected(tech)" (change)="toggleTechnologySelection(tech)">
+          <label class="btn btn-outline-primary me-2 mb-2" for="btn-{{ tech }}">
+            {{ tech }}
+          </label>
         }
 
-        <button
-        class="btn btn-outline-danger me-2 mb-2"
-        [class.active]="includeWork"
-        (click)="toggleWorkFilter()">
-        Trabajos
-      </button>
+        <input type="checkbox" class="btn-check" id="btn-includeWork" [checked]="includeWork" (change)="toggleWorkFilter()">
+        <label class="btn btn-outline-danger me-2 mb-2" for="btn-includeWork">
+          Trabajos
+        </label>
 
         <button
           class="btn btn-outline-secondary me-2 mb-2"

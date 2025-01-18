@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { ProjectService } from '../services/project.service.js';
 import { CardsProyectsComponent } from '../cards-proyects/cards-proyects.component.js';
 import { ProjectModalComponent } from '../project-modal/project-modal.component.js';
@@ -19,7 +19,7 @@ export class ProyectsComponent {
   selectedProject: { title: string; role: string; description: string; image: string; technologies: Technology[] } | null = null;
   selectedTechnologies: Technology[] = [];
 
-  constructor(private projectService: ProjectService){}
+  constructor(private projectService: ProjectService, private renderer: Renderer2){}
 
   ngOnInit() {
     this.updateVisibleProjects();
@@ -50,6 +50,7 @@ export class ProyectsComponent {
     } else {
       this.selectedTechnologies.splice(index, 1); // Si está seleccionada, la quitamos
     }
+    setTimeout(() => {}, 100); // Pausa breve para recalcular estilos
     this.updateVisibleProjects(); // Volver a actualizar los proyectos
   }
 
