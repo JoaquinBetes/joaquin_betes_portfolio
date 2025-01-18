@@ -150,6 +150,14 @@ ${n.map((r,o)=>`${o+1}) ${r.toString()}`).join(`
             </ul>
           </div>
           <hr style="margin: 20px 0;">
+
+          <div class="link d-flex justify-content-center w-100">
+            <a href="https://www.youtube.com/embed/0kaCRvTS7pk?si=_HNdxgS37C05vqUd" target="_blank" class="btn btn-primary m-2 w-100 h-40">
+              Demo
+            </a>
+          </div>
+
+          <hr style="margin: 20px 0;">
           <div class="project-info">
             <h3>Detalles del Proyecto:</h3>
             <ul>
