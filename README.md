@@ -1,59 +1,42 @@
-# PortfolioBetesJoaquin
+# Portfolio Personal de Joaquín Betés
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Este es el código fuente de mi portfolio personal, desarrollado para mostrar mis proyectos, habilidades y experiencia en desarrollo web. Puedes verlo en funcionamiento aquí: [https://joaquinbetes.github.io/joaquin_betes_portfolio/](https://joaquinbetes.github.io/joaquin_betes_portfolio/)
 
-## Development server
+## Tecnologías Utilizadas
 
-To start a local development server, run:
+- **Angular**: Framework principal para la construcción de la aplicación.
+- **TypeScript**: Lenguaje de programación utilizado para un código más robusto y mantenible.
+- **Bootstrap**: Framework CSS para un diseño responsivo y moderno.
 
-```bash
-ng serve
-```
+## Funcionalidades
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Sección de Inicio**: Presentación personal y resumen de habilidades.
+- **Sección de Proyectos**: Galería interactiva de mis proyectos con descripciones detalladas y enlaces relevantes.
+- **Sección de Contacto**: Formulario para que los visitantes puedan comunicarse directamente conmigo.
 
-## Code scaffolding
+## Instalación y Uso
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/JoaquinBetes/joaquin_betes_portfolio.git
+   cd joaquin_betes_portfolio
+   ```
 
-```bash
-ng generate component component-name
-```
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. **Iniciar el servidor de desarrollo**:
+   ```bash
+   ng serve
+   ```
+   Luego, abre tu navegador en `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
+## Contribuciones
 
-## Building
+Actualmente, este proyecto es de carácter personal, pero si tienes sugerencias o mejoras, siéntete libre de abrir un issue o enviar un pull request.
 
-To build the project run:
+## Licencia
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.

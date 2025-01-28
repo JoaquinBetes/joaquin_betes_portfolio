@@ -458,7 +458,59 @@ export class ProjectService {
         <hr style="margin: 20px 0;">
       </section>
       `
-      , image: '/joaquin_betes_portfolio/assets/images/comuni.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" }
+      , image: '/joaquin_betes_portfolio/assets/images/comuni.png', technologies: [ this.selectTech('JavaScript'), this.selectTech('PHP'), this.selectTech('MySQL'), this.selectTech('HTML'), this.selectTech('CSS')], work: "yes" },
+      { title: 'Portfolio web Joaquín Betes', role:"Frontend", description:
+        `
+<section id="portfolio-web">
+  <div class="container">
+    <p>
+      Esta página web es interactiva y responsive desarrollada utilizando <strong>Angular</strong>, <strong>TypeScript</strong> y <strong>Bootstrap</strong>, garantizando una arquitectura modular, escalabilidad y un diseño moderno adaptado a diversos dispositivos. Su propósito es ofrecer una plataforma flexible y eficiente para la visualización y organización de proyectos personales.
+    </p>
+
+    <hr style="margin: 20px 0;">
+    <div class="project-info">
+      <h5>Secciones Principales:</h5>
+      <p>El sistema se divide en varias secciones diseñadas para destacar y organizar los proyectos de manera clara e intuitiva:</p>
+      <ul>
+        <li><strong>Inicio:</strong> Una introducción con un resumen general del perfil y las habilidades del autor.</li>
+        <li><strong>Proyectos:</strong> Una galería interactiva que muestra los proyectos desarrollados, con detalles específicos como descripciones, tecnologías utilizadas y enlaces a repositorios o demos.</li>
+        <li><strong>Contacto:</strong> Un formulario funcional que permite a los visitantes contactarse con el autor.</li>
+      </ul>
+
+      <hr style="margin: 20px 0;">
+      <h5>Opciones de Filtro y Navegación:</h5>
+      <p>Para facilitar la exploración de los proyectos, la aplicación incluye:</p>
+      <ul>
+        <li><strong>Filtros Dinámicos:</strong> Permiten a los usuarios filtrar proyectos según categorías como tecnologías utilizadas o tipo de proyecto.</li>
+        <li><strong>Navegación Intuitiva:</strong> Un menú claro y responsivo que facilita moverse entre las distintas secciones.</li>
+      </ul>
+    </div>
+
+    <hr style="margin: 20px 0;">
+    <p>Este sistema está diseñado para destacar las habilidades técnicas del desarrollador, presentando su trabajo de manera profesional y organizada, mientras asegura una experiencia de usuario fluida y atractiva.</p>
+
+    <hr style="margin: 20px 0;">
+    <div class="technologies">
+      <h3>Tecnologías Utilizadas:</h3>
+      <ul>
+        <li><strong>Angular:</strong> Framework principal para la estructura modular de la aplicación.</li>
+        <li><strong>TypeScript:</strong> Lenguaje que aporta tipado estático y robustez al código.</li>
+        <li><strong>Bootstrap:</strong> Framework CSS para un diseño responsivo y moderno.</li>
+        <li><strong>HTML y CSS:</strong> Base del frontend para estructurar y dar estilo a la aplicación.</li>
+      </ul>
+           <hr>
+
+      <h3>Enlaces</h3>
+      <p>
+        Puede ver el repositorio aquí: 
+        <a href="https://github.com/JoaquinBetes/joaquin_betes_portfolio" target="_blank">Repositorio Github</a>
+      </p>
+    </div>
+  </div>
+  <hr style="margin: 20px 0;">
+</section>
+        `
+        , image: '/joaquin_betes_portfolio/assets/images/portfolio.png', technologies: [ this.selectTech('Angular'), this.selectTech('TypeScript'), this.selectTech('Bootstrap'), this.selectTech('HTML'), this.selectTech('CSS')] }
     // ,
   ];
 
