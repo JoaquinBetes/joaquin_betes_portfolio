@@ -175,7 +175,9 @@ export class PortfolioService {
         TECH.vercelai,
         TECH.n8n,
         TECH.python,
-        TECH.angular,
+        TECH.typescript,
+        TECH.nextjs,
+        TECH.react,
       ],
     },
     {
