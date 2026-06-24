@@ -178,6 +178,30 @@ export class PortfolioService {
         TECH.angular,
       ],
     },
+    {
+      id: 'freelance-abud',
+      role: { es: 'Desarrollador Frontend & Full-Stack', en: 'Frontend & Full-Stack Developer' },
+      company: 'Proyectos a medida (colaboración con Ing. S. E. Abud)',
+      period: { es: '2021 – 2023', en: '2021 – 2023' },
+      location: { es: 'Remoto', en: 'Remote' },
+      summary: {
+        es: 'Desarrollo de aplicaciones web a medida para distintos clientes.',
+        en: 'Custom web application development for various clients.',
+      },
+      highlights: {
+        es: [
+          'App web de administración inmobiliaria con paneles multi-rol (inquilinos, propietarios, administradores), notificaciones automatizadas y gestión documental.',
+          'Sistema web de gestión de tokens virtuales para un ecosistema cerrado, con roles de administrador y usuario (generación, supervisión y transferencia de unidades de valor).',
+          'Plataforma de gestión municipal con mensajería interna, administración de perfiles por rol e informes de gestión.',
+        ],
+        en: [
+          'Real-estate management web app with multi-role panels (tenants, owners, administrators), automated notifications and document management.',
+          'Virtual token management system for a closed ecosystem, with administrator and user roles (issuance, supervision and transfer of value units).',
+          'Municipal management platform with internal messaging, per-role profile administration and management reports.',
+        ],
+      },
+      technologies: [TECH.php, TECH.mysql, TECH.javascript, TECH.html, TECH.css, TECH.bootstrap],
+    },
   ];
 
   private readonly education: EducationItem[] = [
@@ -503,7 +527,7 @@ export class PortfolioService {
     },
     {
       id: 'tattoo-artist-site',
-      context: 'personal',
+      context: 'freelance',
       image: 'assets/images/tattood.png',
       title: { es: 'Web para profesional del tatuaje', en: 'Tattoo artist website' },
       role: { es: 'Frontend', en: 'Frontend' },
