@@ -1,21 +1,35 @@
-import { Component } from '@angular/core';
-import { ProfileComponent } from '../profile/profile.component.js';
-import { AboutMeComponent } from '../about-me/about-me.component.js';
-import { ProyectsComponent } from '../proyects/proyects.component.js';
-import { ContactComponent } from '../contact/contact.component.js';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ProfileComponent } from '../profile/profile.component';
+import { AboutMeComponent } from '../about-me/about-me.component';
+import { ExperienceComponent } from '../experience/experience.component';
+import { SkillsComponent } from '../skills/skills.component';
+import { ProyectsComponent } from '../proyects/proyects.component';
+import { EducationComponent } from '../education/education.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ProfileComponent,
     AboutMeComponent,
+    ExperienceComponent,
+    SkillsComponent,
     ProyectsComponent,
+    EducationComponent,
     ContactComponent,
   ],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  template: `
+    <main id="main">
+      <app-profile />
+      <app-about-me />
+      <app-experience />
+      <app-skills />
+      <app-proyects />
+      <app-education />
+      <app-contact />
+    </main>
+  `,
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

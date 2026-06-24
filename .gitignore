@@ -4,6 +4,9 @@
 # Ignorar la carpeta de compilación de Angular
 .angular/
 
+# Configuración local de tooling (Claude Code / preview)
+.claude/
+
 # Logs
 logs
 *.log

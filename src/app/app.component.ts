@@ -1,31 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component.js';
+import { FooterComponent } from './footer/footer.component';
+import { ThemeService } from './services/theme.service';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    HomeComponent,
-    HeaderComponent,
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [HeaderComponent, HomeComponent, FooterComponent],
   template: `
-    <main [attr.data-bs-theme]="modoOscuro">
-      <app-header (modoChanged)="cambiarModo($event)" ></app-header>
-      <app-home ></app-home>
-    </main>
-    <router-outlet />
+    <app-header />
+    <app-home />
+    <app-footer />
   `,
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portfolio_betes_joaquin';
-  modoOscuro: string = 'dark';
-
-  cambiarModo(modo:string){
-    this.modoOscuro = modo;
-  }
-  
+  // Eagerly instantiate so the persisted theme/language are applied on load.
+  private readonly theme = inject(ThemeService);
+  private readonly language = inject(LanguageService);
 }

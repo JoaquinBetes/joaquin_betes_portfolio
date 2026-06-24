@@ -1,42 +1,57 @@
-# Mi Portfolio Web Personal 
+# Portfolio — Joaquín Betes
 
-Este es el código fuente de mi portfolio personal, desarrollado para mostrar mis proyectos, habilidades y experiencia en desarrollo web. Puedes verlo en funcionamiento aquí: [https://joaquinbetes.github.io/joaquin_betes_portfolio/](https://joaquinbetes.github.io/joaquin_betes_portfolio/)
+Portfolio personal de **Joaquín Betes**, Full-Stack Developer & IA, orientado a Ciencia de Datos.
+Aplicación web estática, bilingüe (ES/EN) y con tema claro/oscuro.
 
-## Tecnologías Utilizadas
+🔗 **En vivo:** [joaquinbetes.github.io/joaquin_betes_portfolio](https://joaquinbetes.github.io/joaquin_betes_portfolio/)
 
-- **Angular**: Framework principal para la construcción de la aplicación.
-- **TypeScript**: Lenguaje de programación utilizado para un código más robusto y mantenible.
-- **Bootstrap**: Framework CSS para un diseño responsivo y moderno.
+## Tecnologías
 
-## Funcionalidades
+- **Angular 19** (componentes _standalone_, _signals_, control-flow `@if`/`@for`).
+- **TypeScript** en modo `strict`.
+- **Bootstrap 5** (grid + componentes JS) sobre un _design system_ propio con _custom properties_.
+- **SCSS** con tokens de color por tema.
+- **Bootstrap Icons**.
 
-- **Sección de Inicio**: Presentación personal y resumen de habilidades.
-- **Sección de Proyectos**: Galería interactiva de mis proyectos con descripciones detalladas y enlaces relevantes.
-- **Sección de Contacto**: Formulario para que los visitantes puedan comunicarse directamente conmigo.
+## Características
 
-## Instalación y Uso
+- **Bilingüe (ES/EN)** con cambio de idioma en tiempo real y preferencia persistida.
+- **Tema oscuro/claro** persistido en el navegador, aplicado antes del primer render para evitar parpadeo.
+- **Secciones:** Sobre mí, Experiencia, Habilidades, Proyectos (con filtros y modal de detalle), Formación y Contacto.
+- **Micro-interacciones** con animaciones al hacer scroll (`IntersectionObserver`), respetando `prefers-reduced-motion`.
+- **Contenido tipado**: experiencia, formación y proyectos viven como datos en `PortfolioService` (sin `innerHTML`).
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/JoaquinBetes/joaquin_betes_portfolio.git
-   cd joaquin_betes_portfolio
-   ```
+## Estructura
 
-2. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
+```
+src/app/
+├── interfaces/      # tipos (i18n + modelos de dominio)
+├── i18n/            # diccionario de textos de UI (ES/EN)
+├── services/        # PortfolioService (datos), ThemeService, LanguageService
+├── directives/      # reveal-on-scroll
+├── shared/          # componente reutilizable tech-chip
+└── <secciones>/     # header, profile, about-me, experience, skills,
+                     # proyects (+ cards y modal), education, contact, footer
+```
 
-3. **Iniciar el servidor de desarrollo**:
-   ```bash
-   ng serve
-   ```
-   Luego, abre tu navegador en `http://localhost:4200/`.
+## Desarrollo
 
-## Contribuciones
+```bash
+npm install
+npm start          # http://localhost:4200/
+```
 
-Actualmente, este proyecto es de carácter personal, pero si tienes sugerencias o mejoras, siéntete libre de abrir un issue o enviar un pull request.
+## Build y despliegue (GitHub Pages)
+
+El proyecto se compila como SPA estática (sin SSR). El `baseHref` está configurado para el subpath del repositorio.
+
+```bash
+npm run build      # genera dist/portfolio_betes_joaquin/browser
+npm run deploy     # build + publica en la rama gh-pages con angular-cli-ghpages
+```
+
+`public/404.html` actúa como _fallback_ para que GitHub Pages sirva la aplicación ante rutas desconocidas.
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Proyecto personal. El código se publica bajo Licencia MIT.

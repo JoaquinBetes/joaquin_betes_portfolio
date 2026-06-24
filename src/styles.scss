@@ -1,278 +1,404 @@
-/* You can add global styles to this file, and also import other style files */
+/* =====================================================================
+   Joaquín Betes — Portfolio
+   Global design system. Bootstrap is used for layout/grid + JS
+   components (modal, collapse); the visual language is defined here
+   with CSS custom properties that switch per `data-bs-theme`.
+   ===================================================================== */
 @use "bootstrap";
-@use 'sass:color';
 
-/* Variables de colores para modo nocturno */
-// Navbar
-$nav-primary-color-dm: #0d6efd; 
-$header-bg-dm: #212529;
-$link-hover-color-dm: $nav-primary-color-dm;
-// Home
-$background-color-dm: #1d1d1d;
-$background-section-color-dm:#212529;
-$text-color-dm: #d3d3d3;
-$primary-color-dm: #bb86fc;
-$secondary-color-dm: #ab6bfa;
-$terciary-color-dm: #0d6efd;
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                       */
+/* ------------------------------------------------------------------ */
+:root {
+  --jb-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --jb-font-display: "Space Grotesk", var(--jb-font-sans);
+  --jb-font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-/* Variables de colores para modo claro */
-// Navbar
-$nav-primary-color-lm: #0d6efd; 
-$header-bg-lm: #0d6efd;
-$link-hover-color-lm: #212529;
-$nav-text-color-lm: #f2f2f2;
-// Home
-$background-color-lm: #f2f2f2;
-$background-section-color-lm: #ebebeb;
-$text-color-lm: #212529;
-$primary-color-lm: #007bff;
-$secondary-color-lm: #6c757d;
+  --jb-radius: 14px;
+  --jb-radius-sm: 10px;
+  --jb-radius-pill: 999px;
 
-$border-radius: 8px;
+  --jb-shadow: 0 1px 2px rgba(2, 6, 12, 0.16), 0 12px 32px -12px rgba(2, 6, 12, 0.5);
+  --jb-shadow-soft: 0 1px 2px rgba(2, 6, 12, 0.1), 0 8px 24px -16px rgba(2, 6, 12, 0.4);
 
-.bi{
-  position: absolute;
-  margin-right: 5px;
-  margin-top: 0px;
-  right: 0;
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
-}
-.bi:hover{
-  color: $nav-text-color-lm;
+  --jb-section-y: clamp(3.5rem, 8vw, 6.5rem);
+  --jb-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.bi-brightness-high-fill{
-  font-size: 1.3rem;
-  top: 0.55rem;
+/* Dark theme (default) ---------------------------------------------- */
+:root,
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+
+  --jb-bg: #0b0f14;
+  --jb-bg-grid: rgba(179, 136, 255, 0.07);
+  --jb-surface: #111922;
+  --jb-surface-2: #16212d;
+  --jb-border: #223040;
+  --jb-border-strong: #2c3e52;
+
+  --jb-text: #dbe4ee;
+  --jb-text-muted: #8da2b8;
+  --jb-heading: #f3f7fb;
+
+  --jb-accent: #b388ff;
+  --jb-accent-soft: rgba(179, 136, 255, 0.15);
+  --jb-accent-strong: #9a6bff;
+  --jb-accent-contrast: #1a0b2e;
+  --jb-violet: #f472b6;
+
+  /* Bootstrap overrides */
+  --bs-body-bg: var(--jb-bg);
+  --bs-body-color: var(--jb-text);
+  --bs-emphasis-color: var(--jb-heading);
+  --bs-border-color: var(--jb-border);
+  --bs-primary: var(--jb-accent);
+  --bs-primary-rgb: 179, 136, 255;
+  --bs-link-color: var(--jb-accent);
+  --bs-link-hover-color: var(--jb-accent-strong);
 }
 
-.bi-moon-stars-fill{
-  color: $nav-text-color-lm;
-  top: 0.75rem;
+/* Light theme ------------------------------------------------------- */
+[data-bs-theme="light"] {
+  color-scheme: light;
+
+  --jb-bg: #f5f8fa;
+  --jb-bg-grid: rgba(124, 58, 237, 0.07);
+  --jb-surface: #ffffff;
+  --jb-surface-2: #eef3f7;
+  --jb-border: #dbe3ec;
+  --jb-border-strong: #c4d0dd;
+
+  --jb-text: #243240;
+  --jb-text-muted: #5d6e80;
+  --jb-heading: #0f1c2b;
+
+  --jb-accent: #7c3aed;
+  --jb-accent-soft: rgba(124, 58, 237, 0.12);
+  --jb-accent-strong: #6d28d9;
+  --jb-accent-contrast: #ffffff;
+  --jb-violet: #db2777;
+
+  --bs-body-bg: var(--jb-bg);
+  --bs-body-color: var(--jb-text);
+  --bs-emphasis-color: var(--jb-heading);
+  --bs-border-color: var(--jb-border);
+  --bs-primary: var(--jb-accent);
+  --bs-primary-rgb: 124, 58, 237;
+  --bs-link-color: var(--jb-accent);
+  --bs-link-hover-color: var(--jb-accent-strong);
 }
 
-.icon-transition {
-  opacity: 0;
-  transform: scale(0.8) rotate(180deg);
-  transition: transform 0.4s ease, opacity 0.4s ease;
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
 }
 
-.nav-link{
-  font-size: 1rem;
+body {
+  font-family: var(--jb-font-sans);
+  background-color: var(--jb-bg);
+  color: var(--jb-text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color var(--jb-transition), color var(--jb-transition);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--jb-font-display);
+  color: var(--jb-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+a {
+  text-decoration: none;
+  transition: color var(--jb-transition);
+}
+
+::selection {
+  background: var(--jb-accent);
+  color: var(--jb-accent-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--jb-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Custom, minimal scrollbar */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--jb-border-strong);
+  border-radius: 999px;
+  border: 3px solid var(--jb-bg);
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout helpers                                                      */
+/* ------------------------------------------------------------------ */
+.section {
+  padding-top: var(--jb-section-y);
+  padding-bottom: var(--jb-section-y);
+  scroll-margin-top: 84px;
+}
+
+.section--tight { padding-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+
+.container-narrow {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Eyebrow / section kicker */
+.eyebrow {
+  font-family: var(--jb-font-mono);
+  font-size: 0.78rem;
   font-weight: 500;
-}
-.navbar-brand {
-  font-size: 1.4rem;
-  font-weight: normal;
-}
-
-.image-wrapper {
-  display: flex;
-  justify-content: center;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--jb-accent);
+  display: inline-flex;
   align-items: center;
-  max-width: 100%;
+  gap: 0.5rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: var(--jb-accent);
+  opacity: 0.7;
 }
 
-.image-wrapper img {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+.section-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  margin-top: 0.75rem;
 }
 
-// MODO OSCURO
-
-body [data-bs-theme="dark"]
-{
-  transition: background-color 0.7s ease, color 0.7s ease;
-  background-color: $background-color-dm;
-  color: $text-color-dm;
-
-  .navbar {
-    background-color: $header-bg-dm;
-
-    .btn {
-      outline: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-  
-    .navbar-brand {
-      color: $text-color-dm;
-    }
-  
-    .nav-link {
-      color: $text-color-dm;
-      transition: color 0.3s;
-  
-      &:hover {
-        color: $link-hover-color-dm;
-      }
-    }
-  
-  }
-
-  header {
-    color: $text-color-dm;
-  
-    .btn-primary {
-      transition: background-color 0.7s ease, color 0.7s ease;
-      background-color: $primary-color-dm;
-      border-color: $primary-color-dm;
-  
-      &:hover {
-        background-color: color.adjust($primary-color-dm, $lightness: -10%);
-        border-color: color.adjust($primary-color-dm, $lightness: -10%);
-      }
-    }
-  }
-  
-  /* Sección sobre mí */
-  #about {
-    border-radius: $border-radius;
-    background-color: $background-section-color-dm;
-    color: $text-color-dm;
-  }
-  
-  /* Sección de proyectos */
-  #projects {
-    .card {
-      background-color: color.adjust($background-color-dm, $lightness: -10%);
-      color: $text-color-dm;
-      
-  
-      .btn-primary {
-        background-color: $primary-color-dm;
-        border-color: $secondary-color-dm;
-  
-        &:hover {
-          background-color: $secondary-color-dm;
-          
-        }
-      }
-    }
-  }
-  
-  /* Sección de contacto */
-  #contact {
-    border-radius: $border-radius;
-    background-color: $background-section-color-dm;
-    color: $text-color-dm;
-  
-    .btn-outline-light {
-      color: $text-color-dm;
-      border-color: $terciary-color-dm;
-  
-      &:hover {
-        background-color: color.adjust($terciary-color-dm, $lightness: 5%);
-        color: #fff;
-      }
-    }
-  }
+.section-lead {
+  color: var(--jb-text-muted);
+  max-width: 60ch;
+  font-size: 1.02rem;
 }
 
-// MODO CLARO
-
-body [data-bs-theme="light"]
-{
-  transition: background-color 0.7s ease, color 0.7s ease;
-  background-color: $background-color-lm;
-  color: #1d1d1d;
-
-  .navbar {
-    background-color: $header-bg-lm;
-
-    .btn {
-      outline: none !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-  
-    .navbar-brand {
-      color: $nav-text-color-lm;
-    }
-  
-    .nav-link {
-      color: $nav-text-color-lm;
-      transition: color 0.3s;
-  
-      &:hover {
-        color: $link-hover-color-lm;
-      }
-    }
-  
-  }
-
-  header {
-    background-color: $background-color-lm;
-    color: $text-color-lm;
-  
-    .btn-primary {
-      transition: background-color 0.7s ease, color 0.7s ease;
-      background-color: $primary-color-lm;
-      border-color: $primary-color-lm;
-  
-      &:hover {
-        background-color: color.adjust($primary-color-lm, $lightness: -10%);
-        border-color: color.adjust($primary-color-lm, $lightness: -10%);
-      }
-    }
-  }
-  
-  /* Sección sobre mí */
-  #about {
-    border-radius: $border-radius;
-    background-color: $background-section-color-lm;
-    color: $text-color-lm;
-  }
-
-  .modal-content {
-    background-color: #ebebeb;
+/* ------------------------------------------------------------------ */
+/* Surfaces & cards                                                    */
+/* ------------------------------------------------------------------ */
+.surface {
+  background: var(--jb-surface);
+  border: 1px solid var(--jb-border);
+  border-radius: var(--jb-radius);
 }
 
-  /* Sección de proyectos */
-  #projects {
-    color: $text-color-lm;
-    background-color: $background-color-lm;
-    .card {
-      background-color: color.adjust($background-color-lm, $lightness: -5%);
-      color: $text-color-lm;
-  
-      .btn-primary {
-        background-color: $primary-color-lm;
-        border-color: $secondary-color-lm;
-  
-        &:hover {
-          background-color: color.adjust($primary-color-lm, $lightness: -10%);
-          border-color: color.adjust($primary-color-lm, $lightness: -10%);
-        }
-      }
-    }
-  }
-  
-  /* Sección de contacto */
-  #contact {
-    border-radius: $border-radius;
-    background-color: $background-section-color-lm;
-    color: $text-color-lm;
-  
-    .btn-outline-light {
-      color: $text-color-lm;
-      border-color: $primary-color-lm;
-      border-width: 0.1055cap;
-  
-      &:hover {
-        background-color: color.adjust($primary-color-lm, $lightness: -5%);
-        color: #fff;
-      }
-    }
-  }
-  .skill-card {
-    background-color: $background-section-color-lm;
-    color: $text-color-lm;
-    border-color: #b7b7b7;
-  }
-  .text-mail{
-    color: $text-color-lm;
-  }
+.card {
+  --bs-card-bg: var(--jb-surface);
+  --bs-card-border-color: var(--jb-border);
+  --bs-card-color: var(--jb-text);
+  border-radius: var(--jb-radius);
+  box-shadow: var(--jb-shadow-soft);
+  transition: transform var(--jb-transition), border-color var(--jb-transition),
+    box-shadow var(--jb-transition);
 }
 
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--jb-border-strong);
+  box-shadow: var(--jb-shadow);
+}
+
+/* ------------------------------------------------------------------ */
+/* Buttons                                                             */
+/* ------------------------------------------------------------------ */
+.btn {
+  --bs-btn-font-weight: 600;
+  border-radius: var(--jb-radius-pill);
+  padding: 0.62rem 1.4rem;
+  transition: transform var(--jb-transition), background-color var(--jb-transition),
+    border-color var(--jb-transition), color var(--jb-transition), box-shadow var(--jb-transition);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  --bs-btn-bg: var(--jb-accent);
+  --bs-btn-border-color: var(--jb-accent);
+  --bs-btn-color: var(--jb-accent-contrast);
+  --bs-btn-hover-bg: var(--jb-accent-strong);
+  --bs-btn-hover-border-color: var(--jb-accent-strong);
+  --bs-btn-hover-color: var(--jb-accent-contrast);
+  --bs-btn-active-bg: var(--jb-accent-strong);
+  --bs-btn-active-border-color: var(--jb-accent-strong);
+  --bs-btn-active-color: var(--jb-accent-contrast);
+  box-shadow: 0 8px 24px -12px var(--jb-accent);
+}
+
+.btn-outline {
+  color: var(--jb-text);
+  border: 1px solid var(--jb-border-strong);
+  background: transparent;
+}
+.btn-outline:hover {
+  color: var(--jb-accent);
+  border-color: var(--jb-accent);
+  background: var(--jb-accent-soft);
+}
+
+.btn-ghost {
+  color: var(--jb-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+}
+.btn-ghost:hover { color: var(--jb-accent); background: var(--jb-accent-soft); }
+
+/* ------------------------------------------------------------------ */
+/* Tech chips & tags                                                   */
+/* ------------------------------------------------------------------ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--jb-text);
+  background: var(--jb-surface-2);
+  border: 1px solid var(--jb-border);
+  border-radius: var(--jb-radius-pill);
+  white-space: nowrap;
+  transition: border-color var(--jb-transition), color var(--jb-transition), background var(--jb-transition);
+}
+.chip i { color: var(--jb-accent); font-size: 0.95rem; }
+.chip img { width: 16px; height: 16px; object-fit: contain; }
+.chip--sm { font-size: 0.74rem; padding: 0.28rem 0.58rem; }
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Timeline (experience & education)                                   */
+/* ------------------------------------------------------------------ */
+.timeline {
+  position: relative;
+  margin-left: 0.5rem;
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--jb-border);
+}
+.timeline-item { position: relative; padding-bottom: 2.25rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 6px);
+  top: 0.35rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--jb-accent);
+  box-shadow: 0 0 0 4px var(--jb-accent-soft);
+}
+.timeline-period {
+  font-family: var(--jb-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--jb-accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Navbar                                                              */
+/* ------------------------------------------------------------------ */
+.app-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: color-mix(in srgb, var(--jb-bg) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--jb-border);
+}
+.app-nav .nav-link {
+  color: var(--jb-text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-inline: 0.85rem;
+  transition: color var(--jb-transition);
+}
+.app-nav .nav-link:hover,
+.app-nav .nav-link:focus { color: var(--jb-accent); }
+
+.brand {
+  font-family: var(--jb-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--jb-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.brand .brand-dot { color: var(--jb-accent); }
+
+/* Icon toggle buttons (theme / language) */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 38px;
+  min-width: 38px;
+  padding: 0 0.6rem;
+  border-radius: var(--jb-radius-pill);
+  border: 1px solid var(--jb-border);
+  background: var(--jb-surface-2);
+  color: var(--jb-text);
+  font-family: var(--jb-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--jb-transition), color var(--jb-transition), background var(--jb-transition);
+}
+.icon-btn:hover { border-color: var(--jb-accent); color: var(--jb-accent); }
+.icon-btn i { font-size: 1.05rem; }
+
+/* ------------------------------------------------------------------ */
+/* Modal                                                               */
+/* ------------------------------------------------------------------ */
+.modal-content {
+  background: var(--jb-surface);
+  border: 1px solid var(--jb-border);
+  border-radius: var(--jb-radius);
+  color: var(--jb-text);
+}
+.modal-header, .modal-footer { border-color: var(--jb-border); }
+
+/* ------------------------------------------------------------------ */
+/* Reveal-on-scroll micro-interaction                                  */
+/* ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Text helpers */
+.text-muted-2 { color: var(--jb-text-muted) !important; }
+.text-accent { color: var(--jb-accent) !important; }
+.font-mono { font-family: var(--jb-font-mono); }
